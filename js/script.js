@@ -165,7 +165,7 @@ const demoAccount = {
 };
 
 
-// Add demo account if it does not exist
+// Add or update demo account
 
 let savedAccounts = getAccounts();
 
@@ -181,13 +181,13 @@ if (demoIndex === -1) {
 } else {
 
     savedAccounts[demoIndex] = {
-    ...demoAccount,
-    ...savedAccounts[demoIndex]
-};
-}
+        ...demoAccount,
+        ...savedAccounts[demoIndex],
+        fullName: "Aimi Nazihah binti Yusri",
+        muetResult: "Band 4.0"
+    };
 
-savedAccounts[demoIndex].fullName = "Aimi Nazihah binti Yusri";
-savedAccounts[demoIndex].muetResult = "Band 4.0";
+}
 
 saveAccounts(savedAccounts);
 
